@@ -1,0 +1,29 @@
+<mujoco model="ur10_faps_cell">
+  <compiler angle="radian" autolimits="true"/>
+
+  <worldbody>
+    <light pos="0 0 3" dir="0 0 -1" diffuse="1 1 1"/>
+    <light pos="2 2 2.5" dir="-1 -1 -1" diffuse="0.6 0.6 0.6"/>
+    <light pos="-2 2 2.5" dir="1 -1 -1" diffuse="0.6 0.6 0.6"/>
+
+     <!-- Robot mount tower: top surface at Z=1.205m, shifted slightly right (-Y) -->
+    <body name="robot_tower" pos="0 -0.08 0.6025">
+      <geom name="robot_tower_geom" type="box" size="0.15 0.15 0.6025" rgba="0.5 0.5 0.5 1"/>
+      <!-- horizontal crossbar at mounting-plate surface level, rotated to run along Y -->
+      <geom name="tower_crossbar" type="box" pos="0 0 0.5725" size="0.03 0.4 0.03" rgba="0.6 0.6 0.6 1"/>
+    </body>
+
+    <!-- Working table: tabletop + 4 legs, rotated so 1.5m side runs along Y -->
+    <body name="working_table" pos="1.11 0 1.044">
+      <!-- tabletop slab, half-extents: X=0.375 Y=0.75 Z=0.025 -->
+      <geom name="table_top" type="box" pos="0 0 -0.025" size="0.375 0.75 0.025" rgba="0.8 0.7 0.5 1"/>
+      <!-- 4 legs, each leg height = table_top_z (1.044) minus small clearance -->
+      <geom name="leg_1" type="box" pos="0.32 0.68 -0.522" size="0.03 0.03 0.497" rgba="0.3 0.3 0.3 1"/>
+      <geom name="leg_2" type="box" pos="0.32 -0.68 -0.522" size="0.03 0.03 0.497" rgba="0.3 0.3 0.3 1"/>
+      <geom name="leg_3" type="box" pos="-0.32 0.68 -0.522" size="0.03 0.03 0.497" rgba="0.3 0.3 0.3 1"/>
+      <geom name="leg_4" type="box" pos="-0.32 -0.68 -0.522" size="0.03 0.03 0.497" rgba="0.3 0.3 0.3 1"/>
+    </body>
+
+  </worldbody>
+
+</mujoco>

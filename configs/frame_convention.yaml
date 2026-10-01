@@ -1,0 +1,17 @@
+# World frame convention: right-handed, DROID/ROS REP-103 style
+# +X: forward, from robot base toward working table
+# +Y: left (right-hand rule: X cross Y = Z)
+# +Z: up
+# Origin: ground level, directly below robot base mount centerline
+
+robot:
+  base_position: [0.0, 0.0, 1.205]       # meters, ground to robot mount surface
+
+working_table:
+  center_position: [0.735, 0.0, 1.044]   # meters, table top surface center
+  dimensions: [1.5, 0.75, 0.05]          # length(X) x width(Y) x thickness(Z), meters
+
+measurements_source:
+  ground_to_cell_mount: 1.205            # meters
+  ground_to_table_top: 1.044             # meters
+  robot_table_front_to_working_table_back: 0.735  # meters

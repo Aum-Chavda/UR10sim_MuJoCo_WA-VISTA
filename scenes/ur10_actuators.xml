@@ -1,0 +1,8 @@
+<mujoco>
+<position name="shoulder_pan_actuator" joint="shoulder_pan_joint" kp="2000" kv="200" ctrlrange="-3.14159 3.14159"/>
+    <position name="shoulder_lift_actuator" joint="shoulder_lift_joint" kp="2000" kv="200" ctrlrange="-3.14159 3.14159"/>
+    <position name="elbow_actuator" joint="elbow_joint" kp="1500" kv="150" ctrlrange="-6.28319 6.28319"/>
+    <position name="wrist_1_actuator" joint="wrist_1_joint" kp="150" kv="30" ctrlrange="-6.28319 6.28319"/>
+    <position name="wrist_2_actuator" joint="wrist_2_joint" kp="150" kv="30" ctrlrange="-6.28319 6.28319"/>
+    <position name="wrist_3_actuator" joint="wrist_3_joint" kp="150" kv="30" ctrlrange="-6.28319 6.28319"/>
+</mujoco>

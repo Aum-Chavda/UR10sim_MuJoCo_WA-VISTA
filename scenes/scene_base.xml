@@ -1,5 +1,10 @@
 <mujoco model="ur10_faps_cell">
   <compiler angle="radian" autolimits="true"/>
+  <option integrator="implicitfast" timestep="0.002"/>
+
+  <asset>
+    <include file="ur10_assets.xml"/>
+  </asset>
 
   <worldbody>
     <light pos="0 0 3" dir="0 0 -1" diffuse="1 1 1"/>
@@ -23,7 +28,14 @@
       <geom name="leg_3" type="box" pos="-0.32 0.68 -0.522" size="0.03 0.03 0.497" rgba="0.3 0.3 0.3 1"/>
       <geom name="leg_4" type="box" pos="-0.32 -0.68 -0.522" size="0.03 0.03 0.497" rgba="0.3 0.3 0.3 1"/>
     </body>
+    <!-- UR10 robot, mounted at the tower's top surface, matching real lab mount point -->
+    <body name="ur10_mount" pos="0 -0.08 1.205">
+      <include file="ur10_body.xml"/>
+    </body>
 
   </worldbody>
+  <actuator>
+    <include file="ur10_actuators.xml"/>
+  </actuator>
 
 </mujoco>
